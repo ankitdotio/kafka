@@ -1,0 +1,35 @@
+{
+  "name": "kafka",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ankitdotio/kafka#readme",
+  "bugs": {
+    "url": "https://github.com/ankitdotio/kafka/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitdotio/kafka.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "kafka:up":"docker compose up -d",
+    "kafka:down":"docker compose down",
+    "kafka:logs":"docker logs compose -f kafka",
+    "topic:create":"tsx ./src/config/create-topic.ts",
+    "producer":"tsx ./src/producer/order-producer.ts",
+    "consumer:notification":"tsx ./src/consumers/notification-consumer.ts",
+    "consumer:analytics":"tsx ./src/consumers/analytics-consumer.ts"
+    
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
